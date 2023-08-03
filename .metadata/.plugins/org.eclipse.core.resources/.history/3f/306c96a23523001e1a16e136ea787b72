@@ -1,0 +1,5 @@
+package org.appiumcourse.utils;
+
+public class AppiumUtils {
+
+}

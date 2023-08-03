@@ -1,0 +1,53 @@
+package appiumcourse.pomframework;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
+import org.appiumcourse.pageObjects.android.CartPage;
+import org.appiumcourse.pageObjects.android.ProductCatalogue;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.android.Activity;
+
+public class Ecommerce_TC4_Hybrid extends BaseTest {
+
+	
+	@Test(dataProvider = "getData")
+	public void FillForm(HashMap<String, String> input) throws InterruptedException
+	{
+		//FormPage formPage=new FormPage(driver);
+		formPage.setNameField(input.get("name"));
+		formPage.setGender(input.get("gender"));
+		ProductCatalogue prodCat=formPage.setCountryName(input.get("country"));
+		prodCat.addItemToCartByIndex(0);
+		prodCat.addItemToCartByIndex(0);
+		CartPage cartPage=prodCat.goToCartPage();
+		
+		double totalSum=cartPage.getProductSum();
+		double displayedFormattedSum=cartPage.getTotalAmountDisplayed();
+		Assert.assertEquals(totalSum, displayedFormattedSum);
+		cartPage.acceptTermsConditions();
+		cartPage.submitOrder();
+	}
+	@SuppressWarnings("deprecation")
+	@BeforeMethod 
+	public void preSetup() throws InterruptedException
+	{
+		Activity activity = new Activity("com.androidsample.generalstore","com.androidsample.generalstore.MainActivity");
+		activity.setAppWaitPackage("com.androidsample.generalstore");
+		activity.setAppWaitActivity("com.androidsample.generalstore.MainActivity");
+		driver.startActivity(activity);
+	}
+	
+	@DataProvider
+	public Object[][] getData() throws IOException
+	{
+		List<HashMap<String, String>> data=getJsonData(System.getProperty("user.dir")+"//src//test//java//appiumcourse//testData//eCommerce.json");
+		return new Object[][] { {data.get(0), data.get(1), data.get(2)} };
+	}
+	
+}

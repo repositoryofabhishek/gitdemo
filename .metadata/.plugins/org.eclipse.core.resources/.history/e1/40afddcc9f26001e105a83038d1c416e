@@ -1,0 +1,57 @@
+package org.appiumcourse.utils;
+
+import org.appiumcourse.testutils.ExtentReporterNG;
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+
+public class Listeners implements ITestListener {
+
+	ExtentReports extent= ExtentReporterNG.getReporterObject();
+	@Override
+	public void onTestStart(ITestResult result) {
+		// TODO Auto-generated method stub
+		ExtentTest test=extent.cre
+		
+	}
+
+	@Override
+	public void onTestSuccess(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onTestFailure(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onTestSkipped(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onStart(ITestContext context) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onFinish(ITestContext context) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;appiumcourse.pomframework.Assignment1&apos; to &apos;ECom_Test&apos;&#x0D;&#x0A;- Original project: &apos;AppiumFrameworkDesign&apos;&#x0D;&#x0A;- Original element: &apos;appiumcourse.pomframework.Assignment1&apos;&#x0D;&#x0A;- Renamed element: &apos;appiumcourse.pomframework.ECom_Test&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Rename similarly named elements&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Assignment1&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;appiumcourse.pomframework{Assignment1.java[Assignment1" matchStrategy="1" name="ECom_Test" qualified="false" references="true" similarDeclarations="true" stamp="1689444858092" textual="false" version="1.0"/>
+</session>

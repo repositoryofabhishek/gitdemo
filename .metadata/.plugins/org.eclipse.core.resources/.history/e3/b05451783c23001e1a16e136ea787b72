@@ -1,0 +1,14 @@
+ package appiumcourse.pomframework;
+
+import java.net.MalformedURLException;
+
+import org.testng.annotations.Test;
+
+public class ECom_Test extends BaseTest {
+
+	@Test
+	public void DragDrop() throws MalformedURLException, InterruptedException 
+	{
+
+	}
+}

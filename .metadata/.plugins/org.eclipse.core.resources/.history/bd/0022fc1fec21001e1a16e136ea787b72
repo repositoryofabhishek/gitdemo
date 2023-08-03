@@ -1,0 +1,5 @@
+package org.appiumcourse.pageObjects.android;
+
+public class CartPage {
+
+}

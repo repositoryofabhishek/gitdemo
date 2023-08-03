@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="org.appiumcourse.utils.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="appiumcourse.pomframework.Ecommerce_TC4_Hybrid">
+        <methods>
+          <include name="tearDown"/>
+          <include name="FillForm" invocation-numbers="0"/>
+          <include name="configureAppium"/>
+        </methods>
+      </class> <!-- appiumcourse.pomframework.Ecommerce_TC4_Hybrid -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

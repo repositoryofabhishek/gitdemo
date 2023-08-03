@@ -1,0 +1,63 @@
+package org.appiumcourse.pageObjects.android;
+
+import org.appiumcourse.utils.AndroidActions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+
+public class FormPage extends AndroidActions{	
+	//this whole page will hold all the locators information and all the actions.
+
+	AndroidDriver driver;
+	
+	public FormPage(AndroidDriver driver)
+	{
+		super(driver);
+		this.driver=driver;
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+	}
+	
+	//how to create locators first
+	
+	@AndroidFindBy(id="com.androidsample.generalstore:id/nameField")	//This is used to find the elements in an android app. This functionality belongs to Page factory
+	private WebElement nameField;
+	
+	@AndroidFindBy(xpath="//android.widget.RadioButton[@text='Male']")
+	private WebElement maleOption;
+	
+	@AndroidFindBy(xpath="//android.widget.RadioButton[@text='Female']")
+	private WebElement femaleOption;
+	
+	@AndroidFindBy(id="android:id/text1")
+	private WebElement countryDropDown;
+	
+	@AndroidFindBy(id="com.androidsample.generalstore:id/btnLetsShop")
+	private WebElement submitButton;
+	
+	public void setNameField(String name)
+	{
+		nameField.sendKeys(name);
+		//driver.navigate().back();
+	}
+	
+	public void setGender(String gender)
+	{
+		if (gender.contains("female"))
+			femaleOption.click();
+		else
+			maleOption.click(); 
+	}
+	public void setCountryName(String countryName)
+	{
+		countryDropDown.click();
+		scrollToText(countryName);
+		driver.findElement(By.xpath("//android.widget.TextView[@text='"+countryName+"']")).click();
+		submitButton.click();		
+	}
+
+
+}
